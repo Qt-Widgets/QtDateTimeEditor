@@ -40,23 +40,24 @@ DateTimeEditor::DateTimeEditor(QWidget* parent) : QWidget(parent)
   addGroup(MINUTE, 0,   59, 'M');
   addGroup(SECOND, 0,   59, 'S');
 
-  addCharacter(HOUR,   "012");
-  addCharacter(HOUR,   "0123456789");
-  addFixedCharacter(':');
-  addCharacter(MINUTE, "012345");
-  addCharacter(MINUTE, "0123456789");
-  addFixedCharacter(':');
-  addCharacter(SECOND, "012345");
-  addCharacter(SECOND, "0123456789");
-  addFixedCharacter(' ');
+//  addCharacter(HOUR,   "012");
+//  addCharacter(HOUR,   "0123456789");
+//  addFixedCharacter(':');
+//  addCharacter(MINUTE, "012345");
+//  addCharacter(MINUTE, "0123456789");
+//  addFixedCharacter(':');
+//  addCharacter(SECOND, "012345");
+//  addCharacter(SECOND, "0123456789");
+//  addFixedCharacter(' ');
+
   addCharacter(YEAR,   "0123456789");
   addCharacter(YEAR,   "0123456789");
   addCharacter(YEAR,   "0123456789");
   addCharacter(YEAR,   "0123456789");
-  addFixedCharacter('-');
+  addFixedCharacter('/');
   addCharacter(MONTH,  "01");
   addCharacter(MONTH,  "0123456789");
-  addFixedCharacter('-');
+  addFixedCharacter('/');
   addCharacter(DAY,    "0123");
   addCharacter(DAY,    "0123456789");
 
@@ -677,9 +678,9 @@ void DateTimeEditor::initStyleOption(QStyleOptionFrame *option) const
   option->midLineWidth = 0;
   option->state |= QStyle::State_Sunken;
   
-  if (QStyleOptionFrameV2* optionV2 = qstyleoption_cast<QStyleOptionFrameV2*>(option))
+  if (QStyleOptionFrameV3* optionV2 = qstyleoption_cast<QStyleOptionFrameV3*>(option))
   {
-    optionV2->features = QStyleOptionFrameV2::None;
+    optionV2->features = QStyleOptionFrameV3::None;
   }
   //option->features = QStyleOptionFrame::None;
 }
