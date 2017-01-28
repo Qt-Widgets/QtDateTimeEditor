@@ -678,9 +678,9 @@ void DateTimeEditor::initStyleOption(QStyleOptionFrame *option) const
   option->midLineWidth = 0;
   option->state |= QStyle::State_Sunken;
   
-  if (QStyleOptionFrameV3* optionV2 = qstyleoption_cast<QStyleOptionFrameV3*>(option))
+  if (QStyleOptionFrame* optionV2 = qstyleoption_cast<QStyleOptionFrame*>(option))
   {
-    optionV2->features = QStyleOptionFrameV3::None;
+    optionV2->features = QStyleOptionFrame::None;
   }
   //option->features = QStyleOptionFrame::None;
 }
